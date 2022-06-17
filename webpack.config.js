@@ -1,3 +1,5 @@
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 /**@type{import('webpack').Configuration} */
 module.exports = {
@@ -18,6 +20,12 @@ module.exports = {
         ],
     },
     resolve:{
-        extensions:[".js","jsx",".json"],
-    }
+        extensions:[".js" , ".jsx" ,".json"],
+    },
+    plugins:[
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: "./public/index.html"
+        })
+    ]
 };
