@@ -1,16 +1,24 @@
+import {BrowserRouter,Route,Routes} from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
+import { Formulario } from './Formulario'
+import { Inicio } from './Home';
 export function App(){
     return(
         <div className="app">
-           <form method="POST">
-            <h1>Nombre</h1>
-                <input type="text" name="nombre" />
-                <h1>apellido</h1>
-                <input type="text" name="apellido"/>
-                <h1>numero</h1>
-                <input type="text" name="numero" />
-                <button onSubmit={()=>{
-                }}>enviar</button>
-           </form>
+        <BrowserRouter>
+        <header>
+                <nav>
+                    <ul>
+                        <li><NavLink to='/'>Inicio</NavLink></li>
+                        <li><NavLink to='/formulario'>Formulario</NavLink></li>
+                    </ul>
+                </nav>
+            </header>
+            <Routes>
+                <Route path='/' element = {<Inicio/>}/>
+                <Route path='/formulario' element = {<Formulario/>}/>
+            </Routes>
+        </BrowserRouter>
         </div>  
     )
 }

@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = {
     entry: "./src/index.js",
     output: {
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "public"),
         filename: "[name].[contenthash].js",
         publicPath: "",
     },
@@ -16,6 +16,10 @@ module.exports = {
                 use: 'babel-loader',
                 test: /.(js|jsx)$/,
                 exclude: /node_modules/
+            },
+            {
+                use:['style-loader','css-loader'],
+                test: /.(css)$/
             },
         ],
     },
