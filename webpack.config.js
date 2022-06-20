@@ -19,7 +19,13 @@ module.exports = {
             },
             {
                 use:['style-loader','css-loader'],
-                test: /.(css)$/
+                test: /.(css)$/,
+                exclude: /node_modules/
+            },
+            {
+                use:['file-loader'],
+                test:/.(png|svg|jpg|jpeg|gif|icon|txt)$/,
+                exclude: /node_modules/
             },
         ],
     },
