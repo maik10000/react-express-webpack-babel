@@ -1,7 +1,7 @@
+/**@type{import('webpack').Configuration} */
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-/**@type{import('webpack').Configuration} */
 module.exports = {
     entry: "./src/index.js",
     output: {

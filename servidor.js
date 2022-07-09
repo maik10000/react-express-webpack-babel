@@ -2,11 +2,19 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+var fs = require('fs');
+const { response } = require('express');
 //settings
 app.set('port',process.env.PORT || 3000)
 //middleware
 app.use(express.json())
 //rutas
+app.get('/',(req,res,next)=>{
+   next()
+})
+app.get('/juego',(req,res,next)=>{
+    res.redirect('/juego')
+})
 app.get('/formulario',(req,res)=>{
     res.redirect('/')
 })
